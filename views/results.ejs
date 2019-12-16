@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>PAL Mail Checker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <img id="logo" src="PAL_BlueTexture.png">
+    <div id="title">PAL Mail Checker - Excess Boxes</div>
+    <div class="mainlist">
+      <% for (let i = 0; i < todayCheck.finalArray.length; i++) { %>
+      <% if (!todayCheck.finalArray[i].Account.includes('0')) { %>
+      <% todayCheck.finalArray[i].Counter = todayCheck.finalArray[i].Counter + 1 %>
+        <div class="results">No Account - <%= todayCheck.finalArray[i].Counter %> boxes</div>
+      <% } else { %>
+        <div class="results"><%= todayCheck.finalArray[i].Account %> - <%= todayCheck.finalArray[i].Counter %> boxes</div>
+      <% } %>
+      <% } %>
+    </div>
+  </body>
+</html>

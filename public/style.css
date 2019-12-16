@@ -1,0 +1,301 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #102245;
+}
+
+#index-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#title {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#message {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+}
+
+#form-container {
+    width: 300px;
+}
+
+#submit {
+    background-color: #bfd7ff;
+    height: 25px;
+    width: 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+#mainform {
+    display: flex;
+    flex-direction: column;
+}
+
+#mainform label {
+    margin: 0 0 5px 0;
+}
+
+.mainform-input {
+    background-color: #bfd7ff;
+    height: 50px;
+    border-radius: 10px;
+    border-style: none;
+    margin-bottom: 10px;
+    font-size: 30px;
+    padding: 5px;
+}
+
+#submit-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+
+#submit-container-binsearch {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.hline { 
+    width:100%; 
+    height:1px; 
+    background: #000;
+    margin: 20px 0 20px 0;
+}
+
+#accnum {
+    margin-bottom: 20px;
+}
+
+.order-number {
+    display: inline;
+}
+
+#radio-row {
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.mainlist {
+    margin-top: 20px;
+}
+
+.results {
+    font-size: 25px;
+    color: #102245;
+}
+
+#noaccount {
+    margin-top: 20px;
+}
+
+#total {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+#link-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.link-box {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #102245;
+    border-radius: 10px;
+    color: #102245;
+}
+
+.link-box:hover {
+    color: #bfd7ff;
+    border: 2px solid #bfd7ff;
+    cursor: pointer;
+}
+
+.icon {
+    margin: 20px;
+    font-size: 100px;
+}
+
+.link-title {
+    font-size: 20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#missed-main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#missed-container {
+    border: 2px solid #102245;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 800px; 
+    height: auto;
+}
+
+.missed-element-container {
+    margin: 20px;
+    width: 350px;
+}
+
+#missed-backscan-header {
+    text-align: center;
+    font-family: 'Roboto', sans-serif
+}
+
+#back-redate-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+#back-link {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+
+#back-button {
+    background-color: #bfd7ff;
+    height: 25px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.bin-search-button {
+    background-color: #102245;
+    color: white;
+    font-size: 20px;
+    height: 50px;
+    padding: 0 10px 0 10px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.bin-search-button:hover {
+    cursor: pointer;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.radio-inline {
+    padding: 10px;
+}
+
+.results-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.results {
+    width: 500px;
+}
+
+#backscan-date {
+    min-width: 150px;
+}
+
+#backscan-check-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#backscan-check {
+    display: flex;
+    flex-direction: column;
+}
+
+#nobin-text {
+    font-size: 20px;
+}
+
+#nobin-column-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#nobin-column {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+#nobin-column button {
+    text-align: center;
+    background-color: #102245;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#chart1-container {
+    margin-top: 20px;
+    max-width: 800px;
+}
+
+#chart2-container {
+    margin-top: 20px;
+    max-width: 800px;
+}
+
+#center-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+

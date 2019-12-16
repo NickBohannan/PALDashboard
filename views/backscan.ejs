@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>PAL Missing Backscan</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <img id="logo" src="PAL_BlueTexture.png">
+    <h1 id="message">Missing Backscan Search By Date</h1>
+    <div id="missed-main-container">
+      <div id="form-container">
+        <form id="mainform" method="post" action="/backscan">
+          <label>Date</label>
+          <input type="date" name="date" />
+          <div class="hline"></div>
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

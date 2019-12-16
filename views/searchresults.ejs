@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="results-container">
+      <div class="results">
+        Order Number: <%= scan.order_no_ext %><br>
+        <% let color %>
+        <% if (scan.bin_number <= 999) { %>
+        <% color = 'Blue' %>
+        <% } else if (999 < scan.bin_number <= 1999) { %>
+        <% color = 'Green' %>
+        <% } else if (1999 < scan.bin_number <= 2999) { %>
+        <% color = 'Yellow' %>
+        <% } else if (2999 < scan.bin_number <= 3999) { %>
+        <% color = 'Black' %>
+        <% } else if (3999 < scan.bin_number <= 4999) { %>
+        <% color = 'Red' %>
+        <% } else if (4999 < scan.bin_number <= 5999) { %>
+        <% color = 'White' %>
+        <% } else if (5999 < scan.bin_number <= 6999) { %>
+        <% color = 'Clear' %>
+        <% } else if (6999 < scan.bin_number <= 7999) { %>
+        <% color = 'Beige' %>
+        <% } %>
+        Bin Number: <%= scan.bin_number %><br>
+        Bin Color: <%= color %><br>
+        Office: <%= order.customer_name %><br>
+        Patient: <%= order.patient_name %><br>
+        Last Scan: <%= searchResult.FUNCTION_NAME %>
+        <div class="hline"></div>
+        <div id="submit-container-binsearch">
+          <a href="./binsearch">
+            <input type="button" class="bin-search-button" value="Back to Bin Search">
+          </a>
+          <input type="button" class="bin-search-button" onclick="window.print()" value="Print Page">
+        </div>
+    </div>
+  </div>
+  </body>
+</html>

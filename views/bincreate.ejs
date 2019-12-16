@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>PAL Bin Create</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <img id="logo" src="PAL_BlueTexture.png">
+    <h1 id="message">Bin Create</h1>
+    <div id="missed-main-container">
+      <div id="form-container">
+        <form id="mainform" method="post" action="/bincreate">
+          <label>Order Number</label>
+          <input type="text" class="mainform-input" name="ordernum" autofocus />
+          <label>Bin Number</label>
+          <input type="text" class="mainform-input" name="bin" />
+          <div class="hline"></div>
+          <div id="submit-container">
+            <input class="bin-search-button" type="submit" value="Submit" />
+            <a href="./binsearch">
+              <input type="button" class="bin-search-button" value="Bin Search">
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

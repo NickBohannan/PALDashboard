@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>PAL Portal Login Record</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  </head>
+  <body>
+    <img id="logo" src="PAL_BlueTexture.png">
+    <h1 id="message">PAL Portal Login Record</h1>
+    <div id="center-container">
+      <div id="chart1-container">
+        <canvas id="chart1" width="800" height="400"></canvas>
+      </div>
+      <!-- <div id="chart2-container">
+        <canvas id="chart2" width="800" height="400"></canvas>
+      </div> -->
+    </div>
+    <script>
+
+      let data1 = Cookies.get()
+      let data1array = [] 
+
+      Object.keys(data1).forEach((dataKey) => {
+        dataValueNum = Number.parseInt(data1[dataKey])
+        data1array.push([dataKey, dataValueNum])
+      })
+      
+      let labels1 = []
+      let graphData1 = []
+      
+      data1array.sort((a, b) => {
+        return b[1] - a[1]
+      })
+
+      data1array.forEach(e => {
+        labels1.push(e[0])
+        graphData1.push(e[1])
+      })
+
+      console.log(data1array)
+
+      const ct1 = document.getElementById('chart1').getContext('2d')
+      const chart1 = new Chart(ct1, {
+        type: 'horizontalBar',
+        data: {
+                labels: labels1,
+                datasets: [{
+                    label: 'Number of Visits',
+                    data: graphData1,
+                    borderColor: '#102245',
+                    backgroundColor: 'rgb(64, 255, 69, 0.4)',
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        })
+
+      // const ct2 = document.getElementById('chart2').getContext('2d')
+      // const chart1 = new Chart(ct2, {
+      //   type: 'line',
+      //   data: {
+      //           labels: labels1,
+      //           datasets: [{
+      //               label: 'Number of Logins per Day',
+      //               data: graphData1,
+      //               borderColor: '#102245',
+      //               backgroundColor: 'rgb(64, 255, 69, 0.4)',
+      //               borderWidth: 1,
+      //           }]
+      //       },
+      //       options: {
+      //           scales: {
+      //               xAxes: [{
+      //                   ticks: {
+      //                       beginAtZero: true
+      //                   }
+      //               }]
+      //           }
+      //       }
+      //   })
+
+    </script>
+  </body>
+</html>

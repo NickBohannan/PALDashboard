@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Missed Backscans</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <audio id="xyz" src="triangle.mp3" preload="auto"></audio>
+    <img id="logo" src="PAL_BlueTexture.png">
+    <h1 id="missed-backscan-header">There Are <%= missedBackscans.length %> Missed Backscans for <%= dateString %></h1>
+    <div id="backscan-check-container">
+      <div id="backscan-check">
+        <label id="backscan-check-label">Backscan Check Field</label>
+        <input type="text" id="backscan-check-field">
+      </div>
+    </div>
+    <div id="back-redate-container">
+      <a href="./backscan" id="back-link">
+        <input type="button" id="back-button" value="Go Back">
+      </a>
+      <div id="form-container">
+        <form id="mainform" method="post" action="/backscan">
+          <label>Search Another Date</label>
+          <div class="row">
+            <input type="date" name="date" id="backscan-date" />
+            <div id="submit-container">
+              <input id="submit" type="submit" value="Submit" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="missed-main-container">
+      <div id="missed-container">
+        <% for (let i=0;i<missedBackscans.length;i++) { %>
+          <div class="missed-element-container">
+            <div class="order-result">Order #: <div class="order-number-<%= i %> order-number"><%= missedBackscans[i].order_no_ext %></div>
+            </div>
+            <div class="order-result">Pt. Name: <%= missedBackscans[i].patient_name %></div>
+            <div class="order-result">Account #: <%= missedBackscans[i].customer_code %></div>
+            <div class="order-result">Client Name: <%= missedBackscans[i].customer_name %></div>
+            <div class="order-result">Order Type: <%= missedBackscans[i].ord_type %></div>
+            <div class="order-result">Ship Date: <%= missedBackscans[i].actual_ship_date %></div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+  <script>
+    let backscanField = document.getElementById("backscan-check-field")
+    let children = document.getElementById("missed-container").childNodes
+    let song = document.getElementById("xyz")
+
+    backscanField.focus()
+
+    const sleep = (milliseconds) => {
+      return new Promise(resolve => setTimeout(resolve, milliseconds))
+    }
+
+    const checkNum = async () => {
+      while (true) {
+        if (backscanField.value.length == 11) {
+          for (let i = 0; i < children.length; i++) {
+            if (children[i].innerText) {
+              let orderNum = children[i].innerText.substring(9, 20)
+              if (orderNum == backscanField.value) {
+                children[i].style.backgroundColor = "red"
+                song.play()
+              }
+            }
+          }
+          backscanField.value = ''
+          backscanField.focus()
+        }
+        await sleep(1000)
+      }
+    }
+
+    checkNum()
+
+  </script>
+</html>
